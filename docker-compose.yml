@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ttlab-virtual-lab-video-generator:
+    build: .
+    platform: linux/amd64
+    image: ttlab-virtual-lab-video-generator
+    container_name: ttlab-virtual-lab-video-generator
+    command: python3 main.py
+    restart: always
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+
